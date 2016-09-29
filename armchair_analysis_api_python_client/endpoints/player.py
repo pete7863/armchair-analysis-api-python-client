@@ -89,15 +89,29 @@ def get_penalties(_id):
 
 
 def get_player_by_full_name(full_name):
-    url = "http://armchairanalysis.com/api/1.0/player/%s" % full_name
+    url = "http://armchairanalysis.com/api/1.0/player/%s" % str(full_name).replace(" ", "_")
 
-    return get_generic(url, datatypes.Player)
+    print(url)
+
+    data = get_generic(url, datatypes.Player)
+
+    # TODO: what to do if multiple entries are found?
+    if len(data) == 1:
+        return data[0]
+    else:
+        return None
 
 
 def get_player_by_id(_id):
     url = "http://armchairanalysis.com/api/1.0/player/%s" % _id
 
-    return get_generic(url, datatypes.Player)
+    data = get_generic(url, datatypes.Player)
+
+    # TODO: what to do if multiple entries are found?
+    if len(data) == 1:
+        return data[0]
+    else:
+        return None
 
 
 def get_punts(_id):
