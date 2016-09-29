@@ -42,8 +42,7 @@ def get_game_stats(tname, count=None, start=None):
     return get_generic(url, datatypes.GameStats, params=params)
 
 
-def get_active_players(tname, count=None, start=None):
-    params = get_parameters(count, start)
+def get_active_players(tname):
     url = "http://armchairanalysis.com/api/1.0/players/%s" % tname
 
-    return get_generic(url, datatypes.Player, params=params)
+    return get_generic(url, datatypes.Player)
