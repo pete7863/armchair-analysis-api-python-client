@@ -14,7 +14,7 @@ client.init("USER", "PASS")
 
 Where "USER" and "PASS" are the username and password for the Armchair Analysis.
 
-##Example
+## Example
 Now that the client is initialized, fetch data from the API using the internal endpoints module.
 For example, use the following code to fetch the player data type for Randy Moss:
 
